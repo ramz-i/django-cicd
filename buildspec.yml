@@ -5,13 +5,16 @@ phases:
     runtime-versions:
       python: 3.9
     commands:
+      - echo Installing dependencies
       - pip install --upgrade pip
       - pip install -r requirements.txt
 
   build:
     commands:
-      - echo "Build completed"
+      - echo Build started
+      - python manage.py check
 
 artifacts:
   files:
     - '**/*'
+
